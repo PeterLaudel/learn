@@ -108,4 +108,6 @@ TODO
 -GitOps, ArgoCD, Kubernetes, GCloud etc.
 
 
+## Database
 
+We **must** use snake case for naming all database entities, including databases, tables, columns and constraints. Tables **must** be named in the plural form of the resource they store.
