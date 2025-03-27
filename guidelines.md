@@ -111,3 +111,12 @@ TODO
 ## Database
 
 We **must** use snake case for naming all database entities, including databases, tables, columns and constraints. Tables **must** be named in the plural form of the resource they store.
+
+## Tracking
+
+Tracking **should** not impact the performance of production code. Any tracking logic should be designed to run asynchronously and should not introduce latency or block critical application flows.
+
+- Dependencies required for tracking **must** not be included in the main production bundle unless absolutely necessary.
+- Use environment-based configuration to enable or disable tracking in different environments.
+- If tracking requires external services, ensure that failures do not affect the core functionality of the application.
+- Consider using an event-driven approach to decouple tracking from business logic.
