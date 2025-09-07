@@ -103,10 +103,12 @@ TODO
 
 ## Deployment
 
-TODO
+We use principles of Continous Deployment for delivering changes to production safely, quickly, and reliably. Every commit to the main branch **should** be a potential release. The deployment pipeline **must** be fully automated and **should** be standardized. Rollbacks **must** fast and automated if a deployment causes issues.
 
--GitOps, ArgoCD, Kubernetes, GCloud etc.
+### Technologies
 
+- We use ArgoCD for automated deployment
+- Application code and deployment configuration **must** be seperated. We **must** name the application repository **{app}** and the deployment repository **{app}-deploy**.
 
 ## Database
 
