@@ -112,9 +112,29 @@ TODO
 
 We **must** use snake case for naming all database entities, including databases, tables, columns and constraints. Tables **must** be named in the plural form of the resource they store.
 
+## Monitoring
+
+Monitoring is essential for understanding the health and performance of our systems. Without monitoring, we are blind to failures and can only react when users complain. With monitoring, we are proactive. We use **Sentry** for error tracking and **Grafana** for metrics and dashboards. Together, they give us visibility into the four golden signals:
+
+1. **Latency**  
+   - How long it takes to serve a request.  
+   - Includes both *successful* and *failed* requests (since errors can be very fast).  
+
+2. **Traffic**  
+   - The demand on the system.  
+   - Measured as requests per second, queries per second, transactions per second, etc.  
+
+3. **Errors**  
+   - The rate of failed requests.  
+   - Includes explicit failures (e.g., 5xx responses) and implicit ones (e.g., incorrect results).  
+
+4. **Saturation**  
+   - How “full” the system is.  
+   - Indicates how close the system is to its limits (CPU, memory, queue length, thread pools, etc.).
+
 ## Tracking
 
-Tracking **should** not impact the performance of production code. Any tracking logic should be designed to run asynchronously and should not introduce latency or block critical application flows.
+Tracking is necessary to record User usage and behaviour. Tracking **should** not impact the performance of production code. Any tracking logic should be designed to run asynchronously and should not introduce latency or block critical application flows.
 
 - Dependencies required for tracking **must** not be included in the main production bundle unless absolutely necessary.
 - Use environment-based configuration to enable or disable tracking in different environments.
